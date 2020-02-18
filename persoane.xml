@@ -5,4 +5,11 @@
         <prenume>Ion</prenume>
         <varsta>23</varsta>
     </persoana>
+    <adresa>
+        <strada>Smaraldului</strada>
+        <numar>13</numar>
+        <localitate>Valea Hamsterului</localitate>
+        <judet>Iasi</judet>
+        <tara>Romania</tara>
+    </adresa>
 </persoane>

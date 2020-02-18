@@ -2,6 +2,7 @@
 <!DOCTYPE persoane [
 <!ELEMENT persoane (persoana,adresa)>
 <!ELEMENT persoana (nume,prenume,varsta)>
+<!ATTLIST persoana id CDATA "0">
 <!ELEMENT adresa (strada,numar,localitate,judet,tara)>
 <!ELEMENT nume (#PCDATA)>
 <!ELEMENT prenume (#PCDATA)>
@@ -19,6 +20,7 @@
         <nume>Popescu</nume>
         <prenume>Ion</prenume>
         <varsta>23</varsta>
+
     </persoana>
 
     <adresa>

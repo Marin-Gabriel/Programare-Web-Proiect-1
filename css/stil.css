@@ -1,0 +1,52 @@
+body{
+    background-color: cadetblue;
+}
+
+nav {
+text-align: center;
+margin: 5px;
+}
+
+nav a{
+    font-weight: bold;
+    padding: 10px;
+    border: 5px solid green;
+    margin: 0;
+    color: whitesmoke;
+}
+
+nav a:hover{
+    background-color: red;
+}
+
+ h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+
+    
+}
+
+
+p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+body label{
+    color:white;
+}
+
+
+.field_set{
+    border-color:white;
+    border-style: solid;
+    margin: 5px;
+  }
+
+fieldset legend{
+    background-color: white;
+}

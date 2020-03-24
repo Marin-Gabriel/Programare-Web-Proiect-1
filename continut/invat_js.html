@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script src="js/script.js"></script>
+<title>invat_js</title>
+<link rel="stylesheet" type="text/css" href="css/stil.css">
+
+</head>
+
+<body onload="P1()" >
+<section class="sectiune_js">
+<h2>Sectiune Informativa</h2>
+
+<p id="Data"></p>
+<p id="Adresa"></p>
+<p id="Locatie"></p>
+<p id="InfoBrowser"></p>
+<p id="InfoSO"></p>
+</section>
+<section class="sectiune_js">
+<h2>Loto</h2>
+<p id="aux"></p>
+<input type="text" id="loto0" name="loto">
+<input type="text" id="loto1" name="loto">
+<input type="text" id="loto2" name="loto">
+<input type="text" id="loto3" name="loto">
+<input type="text" id="loto4" name="loto">
+<input type="text" id="loto5" name="loto">
+<input type="text" id="loto6" name="loto">
+<input type="text" id="loto7" name="loto"><br>
+<button onclick="Extrage()">Extrage</button>
+
+<p id="aux3"></p>
+</section>
+
+<section class="sectiune_js">
+<h2>Deseneaza</h2>
+<canvas onclick="Memoreaza(event)" id="myCanvas" width="500" height="300" style="border:5px solid #d3d3d3;"></canvas><br>
+
+<input type="color" id="Contur">
+<input type="color" id="Interior">
+<input type="number" id="nrPuncte" name="NPuncte">
+<p id="aux2"></p>
+</section>
+</body>
+
+</html>

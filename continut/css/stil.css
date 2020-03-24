@@ -29,3 +29,23 @@ section article p
 {
     text-align: center;
 }
+
+input[name=loto]
+{
+    width:10%;
+}
+
+section.sectiune_js
+{
+    border-style: solid;
+    border-color: seagreen;
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+/*
+canvas
+{
+    background-color: white;
+}
+*/

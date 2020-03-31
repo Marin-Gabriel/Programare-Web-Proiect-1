@@ -175,3 +175,27 @@ function Memoreaza(event)
 }
 
 
+function schimbaContinut(resursa)
+{
+var xmlhttp;
+if(window.XMLHttpRequest){
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=
+    function(){
+        if(xmlhttp.readyStatte==4&& xmlhttp.status==200)
+        {
+            document.getElementById("continut").innerHTML=xhtml.responseText;
+        }
+    }
+    var aux=resursa+"html";
+    xmlhttp.open("GET",aux,true);
+    xmlhttp.send();
+}
+}
+
+function Test()
+{
+    var x="<h1>Programare Web</h1><section><h3>Limbajul html</h3><p> <b>HTML(Hypertext Markup Language)</b>este un <i>limbaj de marcare</i> utilizat pentru a crea pagini web.</p>"
+    document.getElementById("test").innerHTML=x;
+
+}

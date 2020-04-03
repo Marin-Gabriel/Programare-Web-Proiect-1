@@ -1,1 +1,1 @@
-C:\Users\G4BY\PycharmProjects\LFT_L4\venv\Scripts\python.exe C:\Users\G4BY\Desktop\PW\Proiect\proiect1-Marin-Gabriel\server_web\server_web.py
+C:\Users\G4BY\PycharmProjects\LFT_L4\venv\Scripts\python.exe C:\Users\G4BY\Desktop\PW\Proiect\proiect1-Marin-Gabriel\server_web\server_prof.py

@@ -1,4 +1,5 @@
-var timerData=setInterval(DataShow,1000);
+//var timerData=setInterval(DataShow,1000);
+
 var ctx;
 function DataShow()
 {
@@ -24,8 +25,8 @@ function AdresShow()
     var locatie=navigator.geolocation;
     locatie=locatie.coords.latitude;
     return locatie;
-}*/
-
+}
+*/
 function BrowserShow()
 {
     var BName=navigator.appCodeName;
@@ -175,27 +176,99 @@ function Memoreaza(event)
 }
 
 
-function schimbaContinut(resursa)
+function schimbaContinut(resursa,jsFisier,jsFunctie)
 {
 var xmlhttp;
 if(window.XMLHttpRequest){
     xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=
-    function(){
-        if(xmlhttp.readyStatte==4&& xmlhttp.status==200)
+    function(){ 
+        if(xmlhttp.readyState==4&& xmlhttp.status==200)
         {
-            document.getElementById("continut").innerHTML=xhtml.responseText;
+            document.getElementById("continut").innerHTML=xmlhttp.responseText;
+            if (jsFisier) {
+                var elementScript = document.createElement('script');
+                elementScript.onload = function () {
+                    console.log("hello");
+                    if (jsFunctie) {
+                        window[jsFunctie]();
+                    }
+                };
+                elementScript.src = jsFisier;
+                document.head.appendChild(elementScript);
+            } else {
+                if (jsFunctie) {
+                    window[jsFunctie]();
+                }
+            }
         }
+        
     }
-    var aux=resursa+"html";
+    var aux=resursa+".html";
     xmlhttp.open("GET",aux,true);
     xmlhttp.send();
 }
 }
 
-function Test()
-{
-    var x="<h1>Programare Web</h1><section><h3>Limbajul html</h3><p> <b>HTML(Hypertext Markup Language)</b>este un <i>limbaj de marcare</i> utilizat pentru a crea pagini web.</p>"
-    document.getElementById("test").innerHTML=x;
 
-}
+function loadJSONDoc() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          
+        Verifica(this);
+      }
+    };
+    xmlhttp.open("GET", "resurse/utilizatori.json", true);
+    xmlhttp.send();
+  }
+
+  function Verifica(xmlhttp)
+  {
+      var objJSON=JSON.parse(xmlhttp.responseText);
+      var utilizator=document.getElementById("utilizator").value;
+      var parola=document.getElementById("parola").value;
+      var verificat=0;
+      for(i=0;i<objJSON.length;i++)
+      {
+        if(objJSON[i].utilizator==utilizator)
+        {
+            if(objJSON[i].parola==parola)
+            {
+            verificat=1;
+            break;
+            }
+        }
+      }
+      if(verificat==1)
+      {
+        document.getElementById("ok").innerHTML="Credentialele sunt corecte";
+      }
+      else
+      {
+        document.getElementById("ok").innerHTML="Credentialele nu sunt corecte";
+      }
+     
+    }
+
+    function Inregistreaza()
+    {
+        var nume=document.getElementById("numeUtilizator").value;
+        var parola=document.getElementById("pass").value;
+        console.log("Am intrat in inregistreaza");
+
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            console.log("Am intrat in functie");
+        if (this.readyState == 4 && this.status == 200) {
+        console.log(" Am primit raspuns");
+      }
+    };
+      console.log("Am ajuns la open");
+      xmlhttp.open("POST", "/api/utilizatori", true);
+      console.log("Am trecut de open");
+     xmlhttp.setRequestHeader("Content-type", "application/json");
+      xmlhttp.send("utilizator="+nume+"&parola="+parola);
+    };
+    

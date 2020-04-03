@@ -43,6 +43,14 @@ section.sectiune_js
     padding: 9px;
     margin: 5px;
 }
+table.tabel_js
+{
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+th, td {
+  padding: 5px;
+}
 /*
 canvas
 {

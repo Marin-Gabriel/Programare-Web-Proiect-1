@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persoane[
+<!ELEMENT persoane (persoana+)>
+<!ATTLIST persoana id CDATA "0">
+<!ELEMENT persoana (nume, prenume, varsta, job, adresa)>
+<!ELEMENT nume (#PCDATA)>
+<!ELEMENT prenume (#PCDATA)>
+<!ELEMENT varsta (#PCDATA)>
+<!ELEMENT job (#PCDATA)>
+<!ELEMENT adresa (strada, numar, localitate, judet, tara)>
+<!ELEMENT strada (#PCDATA)>
+<!ELEMENT numar (#PCDATA)>
+<!ELEMENT localitate (#PCDATA)>
+<!ELEMENT judet (#PCDATA)>
+<!ELEMENT tara (#PCDATA)>
+]>
+<persoane>
+    <persoana id="1">
+        <nume>Popescu</nume>
+        <prenume>Ion</prenume>
+        <varsta>23</varsta>
+        <job>Student</job>
+        <adresa>
+            <strada>Borcanelor</strada>
+            <numar>21</numar>
+            <localitate>Malul Cioatelor</localitate>
+            <judet>Iasi</judet>
+            <tara>Ro</tara>
+        </adresa>
+    </persoana>
+    <persoana id="2">
+        <nume>Marin</nume>
+        <prenume>Gabi</prenume>
+        <varsta>25</varsta>
+        <job>Intern</job>
+        <adresa>
+            <strada>Florilor</strada>
+            <numar>5</numar>
+            <localitate>Valea Hamsterului</localitate>
+            <judet>Iasi</judet>
+            <tara>Ro</tara>
+        </adresa>
+    </persoana>
+    <persoana id="3">
+        <nume>Turcu</nume>
+        <prenume>Ilinca</prenume>
+        <varsta>21</varsta>
+        <job>Senior</job>
+        <adresa>
+            <strada>Egalitatii</strada>
+            <numar>3</numar>
+            <localitate>Muntele Venus</localitate>
+            <judet>Iasi</judet>
+            <tara>Ro</tara>
+        </adresa>
+    </persoana>
+    <persoana id="4">
+        <nume>Vasily</nume>
+        <prenume>Igor</prenume>
+        <varsta>43</varsta>
+        <job>Hipster</job>
+        <adresa>
+            <strada>Blin</strada>
+            <numar>3</numar>
+            <localitate>Kamchatka</localitate>
+            <judet>Brasov</judet>
+            <tara>Ro</tara>
+        </adresa>
+    </persoana>
+    <persoana id="5">
+        <nume>Grecu</nume>
+        <prenume>Svetlana</prenume>
+        <varsta>18</varsta>
+        <job>Model</job>
+        <adresa>
+            <strada>Stileto</strada>
+            <numar>16</numar>
+            <localitate>Cornu</localitate>
+            <judet>Buzau</judet>
+            <tara>Ro</tara>
+        </adresa>
+    </persoana>
+</persoane>

@@ -3,12 +3,9 @@ body
     background: linear-gradient(to left top, cyan, yellow) fixed;
 }
 
-
-
 nav a
 {
 font-weight: bold;
-
 }
 
 nav section
@@ -51,9 +48,77 @@ table.tabel_js
 th, td {
   padding: 5px;
 }
-/*
-canvas
+
+section.sectiune_persoane
 {
-    background-color: white;
+    border-style: solid;
+    border-color:crimson;
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
 }
-*/
+
+section.sectiune_desen
+{
+    border-style: solid;
+    border-color: blueviolet;
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+
+section.sectiune_verifica
+{
+    border-style: solid;
+    border-color: rgb(26, 60, 212);
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+
+section.sectiune_cumparaturi
+{
+    border-style: solid;
+    border-color: rgb(31, 209, 14);
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+
+section.sectiune_video
+{
+    border-style: solid;
+    border-color: rgb(199, 19, 154);
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+
+section.sectiune_despre
+{
+    border-style: solid;
+    border-color: rgb(209, 72, 17);
+    border-width: 4px;
+    padding: 9px;
+    margin: 5px;
+}
+
+form.Test
+{
+    border-style: none;
+}
+
+nav.index_nav
+{
+  background-color: rgb(219, 108, 130);
+  text-align: center;
+  border-radius: 40px;
+  
+}
+
+nav a
+{
+    
+    font-size: 20px;
+}
+

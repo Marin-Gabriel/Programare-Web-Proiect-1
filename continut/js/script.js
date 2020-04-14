@@ -1,4 +1,4 @@
-//var timerData=setInterval(DataShow,1000);
+
 
 var ctx;
 function DataShow()
@@ -20,13 +20,6 @@ function AdresShow()
   return "<br>Adresa este: "+Adresa;
 }
 
-/*function LocationShow()
-{
-    var locatie=navigator.geolocation;
-    locatie=locatie.coords.latitude;
-    return locatie;
-}
-*/
 function BrowserShow()
 {
     var BName=navigator.appCodeName;
@@ -76,7 +69,7 @@ function Extrage()
         
     }
     var rez="Ai nimerit "+nimerite.toString()+" numere."
-    document.getElementById("aux2").innerHTML=rez;
+    document.getElementById("aux3").innerHTML=rez;
 }
 
 function initializeazaCTX()
@@ -104,36 +97,17 @@ ctx.beginPath();
 
 function P1()
 {
-    DataShow();
+    var timerData=setInterval(DataShow,1000);
     document.getElementById("Adresa").innerHTML=AdresShow();
-    //document.getElementById("Locatie").innerHTML=LocationShow();
     document.getElementById("InfoBrowser").innerHTML=BrowserShow();
     document.getElementById("InfoSO").innerHTML=SOShow();
-    //document.getElementById("aux").innerHTML=Extrage();
     initCTX();   
 }
 
 var contor=0;
 var x=0;
 var y=0;
-/*
-function TestDesen()
-{
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-//ctx.fillRect(81, 20, 150, 75);
-ctx.lineWidth = "3";
- ctx.strokeStyle = "green";
-ctx.beginPath();
-ctx.moveTo(0,0);
-ctx.lineTo(200,150);
-ctx.lineTo(200,250);
-ctx.stroke();
-ctx.closePath();
-ctx.fill();
-}
-*/
+
 function Deseneaza()
 { 
 
@@ -153,13 +127,9 @@ function Deseneaza()
 
 function Memoreaza(event)
 {
-
-    //x=event.clientX-8;
-    //y=event.clientY-400;
     x=event.clientX-document.getElementById("myCanvas").offsetLeft;
-    y=event.clientY-document.getElementById("myCanvas").offsetHeight-36;
+    y=event.clientY-document.getElementById("myCanvas").offsetHeight+80;
 
-    
     document.getElementById("aux2").innerHTML=x.toString()+" "+y.toString()+" "+contor.toString()+" "+document.getElementById("myCanvas").offsetHeight;
     
     if(contor==0)
@@ -268,7 +238,49 @@ function loadJSONDoc() {
       console.log("Am ajuns la open");
       xmlhttp.open("POST", "/api/utilizatori", true);
       console.log("Am trecut de open");
-     xmlhttp.setRequestHeader("Content-type", "application/json");
+      xmlhttp.setRequestHeader("Content-type", "application/json");
       xmlhttp.send("utilizator="+nume+"&parola="+parola);
     };
     
+
+function Insereaza_Linie()
+{
+    var index_tabel=document.getElementById("index_inserare").value;
+    var index_tabel=parseInt(index_tabel);
+
+    var nr_linii=document.getElementById("tabel_java").rows.length;
+    var nr_coloane=document.getElementById("tabel_java").rows[0].cells.length;
+
+    var tabel=document.getElementById("tabel_java");
+    var rand=tabel.insertRow(index_tabel);
+
+    var celula;
+    for(i=0;i<nr_coloane;i++)
+    {
+        celula=rand.insertCell(i)
+        celula.style.backgroundColor = document.getElementById("culoare_tabel").value.toString();
+        celula.innerHTML="linie_noua";
+        //celula.innerHTML="L"+index_tabel.toString()+" C"+(i+1).toString();
+    }
+}
+
+function Insereaza_Coloana()
+{
+    var index_tabel=document.getElementById("index_inserare").value;
+    var index_tabel=parseInt(index_tabel);
+
+    var nr_linii=document.getElementById("tabel_java").rows.length;
+    var nr_coloane=document.getElementById("tabel_java").rows[0].cells.length;
+
+    var tabel=document.getElementById("tabel_java");
+    var celula;
+    for(i=0;i<nr_linii;i++)
+    {
+        celula=tabel.rows[i].insertCell(index_tabel);
+        celula.style.backgroundColor = document.getElementById("culoare_tabel").value.toString();
+        //celula.innerHTML="L"+i.toString()+" C"+index_tabel.toString();
+        celula.innerHTML="coloana_noua";
+    }
+   // var aux=document.getElementById('tabel_java').rows[0].cells.length
+   // console.log(aux);
+}
